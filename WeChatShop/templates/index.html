@@ -1,5 +1,4 @@
 {% load static %}
-{% for goods in goods_list %}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -128,8 +127,8 @@
         <div class="am-gallery-item">
             <a href="detail.html" class="">
               <img src="{{ goods.pic_url }}" />
-                <h3 class="am-gallery-title">{{ goods.title}}</h3>
-                <div class="am-gallery-desc">{{ goods.desc }}</div>
+                <h3 class="am-gallery-title"></h3>
+                <div class="am-gallery-desc"></div>
             </a>
         </div>
       </li>
@@ -260,4 +259,3 @@
 <script src="{%static 'js/amazeui.min.js'%}"></script>
 	</body>
 </html>
-{% endfor %}

@@ -5,8 +5,7 @@ from Shop.models import goods
 # Create your views here.
 #首页
 def index(request):
-    goods_list = goods.objects.all()
-    return render(request, 'index.html', {'goods_list' : goods_list})
+    return render(request, 'index.html')
 
 #我的
 def member(request):
