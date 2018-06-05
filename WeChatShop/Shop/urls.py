@@ -9,7 +9,7 @@ urlpatterns = [
     path('about.html', views.about),
     path('infor.html', views.infor),
     path('saftystep.html', views.saftystep),
-    path('login.html', views.login),
+    path('login.html', views.mylogin, name='login'),
     path('shopcart.html', views.shopcart),
     path('allorder.html', views.allorder),
     path('message.html', views.message),

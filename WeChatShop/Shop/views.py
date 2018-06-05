@@ -1,6 +1,8 @@
 #-*- coding:utf-8 -*-
 from django.shortcuts import render
 from Shop.models import goods
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponseRedirect, HttpResponse
 
 # Create your views here.
 #首页
@@ -28,8 +30,17 @@ def saftystep(req):
     return render(req, 'saftystep.html')
 
 #登录
-def login(req):
-    return render(req, 'login.html')
+def mylogin(request):
+    if request.POST:
+        username = request.POST['mobile']
+        password = request.POST['password']
+        user = authenticate(request, username=str(username), password=str(password))
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect('index.html')
+        else:
+            return HttpResponse('False')
+    return render(request, 'login.html')
 
 #购物车
 def shopcart(req):
