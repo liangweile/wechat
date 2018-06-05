@@ -28,7 +28,6 @@ class goods(models.Model):
     title = models.CharField(max_length=150)
     desc = models.CharField(max_length=150)
     price = models.FloatField()
-    # pic_url = models.FilePathField(path="/static/images")
     pic_url = models.CharField(max_length=150)
     # goods_detail = models.TextField(default='')
     # goods_detail_pic = models.CharField(max_length=150, default='')

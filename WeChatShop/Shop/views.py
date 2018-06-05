@@ -1,7 +1,8 @@
 #-*- coding:utf-8 -*-
 from django.shortcuts import render
 from Shop.models import goods
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login
+from .backend import Mybackend
 from django.http import HttpResponseRedirect, HttpResponse
 
 # Create your views here.
@@ -34,7 +35,7 @@ def mylogin(request):
     if request.POST:
         username = request.POST['mobile']
         password = request.POST['password']
-        user = authenticate(request, username=str(username), password=str(password))
+        user = Mybackend.authenticate(request, username=str(username), password=str(password))
         if user is not None:
             login(request, user)
             return HttpResponseRedirect('index.html')
