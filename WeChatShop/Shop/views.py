@@ -1,16 +1,21 @@
 #-*- coding:utf-8 -*-
 from django.shortcuts import render
-from Shop.models import goods
-from django.contrib.auth import login
-from .backend import Mybackend
+from Shop.models import goods, shopcart
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.backends import ModelBackend
 from django.http import HttpResponseRedirect, HttpResponse
+from .models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 #首页
 def index(request):
-    return render(request, 'index.html')
+    goods_list = goods.objects.all()
+    return render(request, 'index.html', {'goods_list':goods_list})
 
 #我的
+@login_required
 def member(request):
     return render(request, 'member.html')
 
@@ -33,25 +38,39 @@ def saftystep(req):
 #登录
 def mylogin(request):
     if request.POST:
-        username = request.POST['mobile']
+        username = request.POST['username']
         password = request.POST['password']
-        user = Mybackend.authenticate(request, username=str(username), password=str(password))
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect('index.html')
+            messages.info(request, '登录成功,跳转到首页')
         else:
-            return HttpResponse('False')
+            messages.error(request, '帐号或密码错误！')
     return render(request, 'login.html')
+#退出登录
+def mylogout(request):
+    logout(request)
+    return HttpResponseRedirect('/index.html')
 
 #购物车
+@login_required
+def shopcart_add(req, goods_id, goods_number):
+    good = goods.objects.get(id=goods_id)
+    user = User.objects.get(username=req.user.username)
+    if user.shopcart:
+        return render(req, 'shopcart.html')
+
+@login_required
 def shopcart(req):
     return render(req, 'shopcart.html')
 
 #所有订单
+@login_required
 def allorder(req):
     return render(req, 'allorder.html')
 
 #动态
+@login_required
 def message(req):
     return render(req, 'message.html')
 
@@ -92,8 +111,9 @@ def contact(req):
     return render(req, 'contact.html')
 
 #商品详情
-def detail(req):
-    return render(req, 'detail.html')
+def detail(req, goods_id):
+    goods_detail = goods.objects.get(id=goods_id)
+    return render(req, 'detail.html', {'goods_detail':goods_detail})
 
 #忘记密码
 def forgetpassword(req):
@@ -161,6 +181,21 @@ def orderdetail(req):
 
 #密码
 def password(req):
+    if req.POST:
+        username = req.POST['username']
+        old_password = req.POST['old_password']
+        new_password = req.POST['new_password']
+        user = authenticate(req, username=username, password=old_password)
+        if new_password!='':
+            if user:
+                    user = User.objects.get(username=username)
+                    user.set_password(new_password)
+                    user.save()
+                    messages.info(req, '修改成功需重新登录')
+            else:
+                messages.error(req, '帐号或密码错误')
+        else:
+            messages.error(req, '新密码为空')
     return render(req, 'password.html')
 
 #支付
@@ -185,6 +220,12 @@ def records(req):
 
 #注册
 def reg(req):
+    if req.POST:
+        username = req.POST['username']
+        password = req.POST['password']
+        user = User.objects.create_user(username=username, password=password)
+        user.save()
+        return HttpResponseRedirect('/member.html')
     return render(req, 'reg.html')
 
 #发布动态
@@ -214,3 +255,12 @@ def ygq(req):
 #可使用红包
 def yhq(req):
     return render(req, 'yhq.html')
+
+class Mybackend(ModelBackend):
+    def authenticate(self, username=None, password=None,):
+        try:
+            user = User.objects.get(username=username)
+            if user.check_password(password):
+                return user
+        except Exception as e:
+            return None

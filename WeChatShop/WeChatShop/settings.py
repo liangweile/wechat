@@ -99,11 +99,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-AUTH_USER_MODEL = 'Shop.user'
+AUTH_USER_MODEL = 'Shop.User'
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'Shop.backend.Mybackend',
+    'Shop.views.Mybackend',
 )
+LOGIN_URL='/login.html'
 
 
 # Internationalization

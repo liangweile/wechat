@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
 from Shop import views
 
 urlpatterns = [
@@ -10,11 +11,13 @@ urlpatterns = [
     path('infor.html', views.infor),
     path('saftystep.html', views.saftystep),
     path('login.html', views.mylogin, name='login'),
+    path('logout', views.mylogout, name='logout'),
     path('shopcart.html', views.shopcart),
     path('allorder.html', views.allorder),
     path('message.html', views.message),
     path('address.html', views.address),
     path('application.html', views.application),
+    path('applicationjob.html', views.applicationjob),
     path('applicationjob.html', views.applicationjob),
     path('boundphone.html', views.boundphone),
     path('category.html', views.category),
@@ -22,7 +25,7 @@ urlpatterns = [
     path('collect.html', views.collect),
     path('collect-edit.html', views.collect_edit),
     path('contact.html', views.contact),
-    path('detail.html', views.detail),
+    url('detail-(?P<goods_id>\d+).html', views.detail, name='detail'),
     path('forgetpassword.html', views.forgetpassword),
     path('gladdress.html', views.gladdress),
     path('integral.html', views.integral),
@@ -39,7 +42,7 @@ urlpatterns = [
     path('newsdetail.html', views.newsdetail),
     path('order.html', views.order),
     path('orderdetail.html', views.orderdetail),
-    path('password.html', views.password),
+    path('password.html', views.password, name="password"),
     path('pay.html', views.pay),
     path('payment.html', views.payment),
     path('recharge.html', views.recharge),
@@ -54,5 +57,6 @@ urlpatterns = [
     path('village.html', views.village),
     path('ygq.html', views.ygq),
     path('yhq.html', views.yhq),
+    url(r'shopcart-add/goods_id=(?P<goods_id>\d+)/goods_number=(?P<goods_number>\d+).html', views.shopcart_add, name="shopcart_add")
 ]
 

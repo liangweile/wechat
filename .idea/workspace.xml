@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="934f7520-def3-459d-ab1d-a4b78bf62559" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/WeChatShop/Shop/backend.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeChatShop/Shop/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/Shop/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeChatShop/Shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/Shop/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeChatShop/Shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/Shop/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeChatShop/Shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/Shop/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeChatShop/WeChatShop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/WeChatShop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeChatShop/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/member.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/member.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/password.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/reg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/shopcart.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/shopcart.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,44 +29,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="backend.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/backend.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
-              <folding>
-                <element signature="e#22#57#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="317">
+              <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/admin.py">
+      <file leaf-file-name="shopcart.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WeChatShop/templates/shopcart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="244">
+              <caret line="45" column="40" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WeChatShop/WeChatShop/settings.py">
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WeChatShop/templates/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="104" column="29" lean-forward="true" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
+            <state relative-caret-position="455">
+              <caret line="157" column="83" selection-start-line="157" selection-start-column="83" selection-end-line="157" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -66,11 +59,29 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="200">
+              <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="638">
+              <caret line="59" column="72" selection-start-line="59" selection-start-column="72" selection-end-line="59" selection-end-column="72" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WeChatShop/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="128" column="28" selection-start-line="128" selection-start-column="28" selection-end-line="128" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -99,6 +110,18 @@
       <find>mobile</find>
       <find>login</find>
       <find>BACKEND</find>
+      <find>logout</find>
+      <find>password</find>
+      <find>加入</find>
+      <find>increase</find>
+      <find>info</find>
+      <find>join</find>
+      <find>imm-b</find>
+      <find>id</find>
+      <find>id=</find>
+      <find>id=&quot;id&quot;</find>
+      <find>del</find>
+      <find>detail</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -107,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WeChatShop/templates/allorder.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/address.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/application.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/applicationjob.html" />
@@ -133,13 +155,11 @@
         <option value="$PROJECT_DIR$/WeChatShop/templates/newsdetail.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/order.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/orderdetail.html" />
-        <option value="$PROJECT_DIR$/WeChatShop/templates/password.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/pay.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/payment.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/recharge.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/recommend.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/records.html" />
-        <option value="$PROJECT_DIR$/WeChatShop/templates/reg.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/speed.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/tidings.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/tureorder.html" />
@@ -148,24 +168,27 @@
         <option value="$PROJECT_DIR$/WeChatShop/templates/yhq.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/release.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/message.html" />
-        <option value="$PROJECT_DIR$/WeChatShop/templates/member.html" />
-        <option value="$PROJECT_DIR$/WeChatShop/templates/detail.html" />
-        <option value="$PROJECT_DIR$/WeChatShop/templates/index.html" />
-        <option value="$PROJECT_DIR$/WeChatShop/Shop/admin.py" />
-        <option value="$PROJECT_DIR$/WeChatShop/templates/login.html" />
-        <option value="$PROJECT_DIR$/WeChatShop/Shop/urls.py" />
-        <option value="$PROJECT_DIR$/WeChatShop/WeChatShop/settings.py" />
-        <option value="$PROJECT_DIR$/WeChatShop/Shop/models.py" />
         <option value="$PROJECT_DIR$/WeChatShop/Shop/backend.py" />
+        <option value="$PROJECT_DIR$/WeChatShop/WeChatShop/settings.py" />
+        <option value="$PROJECT_DIR$/WeChatShop/templates/reg.html" />
+        <option value="$PROJECT_DIR$/WeChatShop/templates/password.html" />
+        <option value="$PROJECT_DIR$/WeChatShop/templates/member.html" />
+        <option value="$PROJECT_DIR$/WeChatShop/templates/login.html" />
+        <option value="$PROJECT_DIR$/WeChatShop/Shop/admin.py" />
+        <option value="$PROJECT_DIR$/WeChatShop/Shop/models.py" />
+        <option value="$PROJECT_DIR$/WeChatShop/templates/index.html" />
+        <option value="$PROJECT_DIR$/WeChatShop/templates/detail.html" />
+        <option value="$PROJECT_DIR$/WeChatShop/Shop/urls.py" />
+        <option value="$PROJECT_DIR$/WeChatShop/templates/shopcart.html" />
         <option value="$PROJECT_DIR$/WeChatShop/Shop/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="613" />
-    <option name="y" value="-4" />
-    <option name="width" value="697" />
-    <option name="height" value="744" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="425" />
+    <option name="y" value="24" />
+    <option name="width" value="917" />
+    <option name="height" value="693" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -190,7 +213,7 @@
               <item name="weixin" type="b2602c69:ProjectViewProjectNode" />
               <item name="weixin" type="462c0819:PsiDirectoryNode" />
               <item name="WeChatShop" type="462c0819:PsiDirectoryNode" />
-              <item name="WeChatShop" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -228,18 +251,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="425" y="24" width="917" height="693" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49913344" visible="true" weight="0.47734374" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49675325" weight="0.47433037" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32919255" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32928944" />
-      <window_info id="Favorites" order="2" sideWeight="0.50086653" side_tool="true" weight="0.25396827" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3285968" />
+      <window_info id="Favorites" order="2" sideWeight="0.5032467" side_tool="true" weight="0.47433037" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -324,24 +347,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/templates/payment.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-123">
           <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/reg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -467,13 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/shopcart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/templates/release.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -516,22 +518,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/member.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="114" column="49" selection-start-line="114" selection-start-column="49" selection-end-line="114" selection-end-column="62" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -540,74 +528,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2293">
-          <caret line="260" column="7" selection-start-line="260" selection-start-column="7" selection-end-line="260" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/WeChatShop/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/backend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/WeChatShop/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="104" column="29" lean-forward="true" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
+        <state relative-caret-position="-704">
+          <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="36" selection-start-line="36" selection-end-line="43" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/member.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="147" column="50" lean-forward="true" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/reg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="120">
+          <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="128" column="28" selection-start-line="128" selection-start-column="28" selection-end-line="128" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="59" column="72" selection-start-line="59" selection-start-column="72" selection-end-line="59" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="157" column="83" selection-start-line="157" selection-start-column="83" selection-end-line="157" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/shopcart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="45" column="40" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
-          <folding>
-            <element signature="e#22#57#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="317">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
         </state>
       </provider>
     </entry>
