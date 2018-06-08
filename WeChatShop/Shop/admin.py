@@ -7,8 +7,6 @@ from Shop.models import User
 class goods_admin(admin.ModelAdmin):
     list_display = ['title', 'desc', 'pic_url']
 
-class shopcart_admin(admin.ModelAdmin):
-    list_display = ['goods_number', 'goods_all_price', 'user']
 
 class order_admin(admin.ModelAdmin):
     list_display = ['statue']
@@ -16,7 +14,7 @@ class order_admin(admin.ModelAdmin):
 
 admin.site.register(goods, goods_admin)
 admin.site.register(User)
-admin.site.register(shopcart, shopcart_admin)
+admin.site.register(shopcart)
 admin.site.register(order, order_admin)
 admin.site.register(order_detail)
 admin.site.register(consignee)

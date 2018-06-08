@@ -9,14 +9,16 @@ from django.conf import settings
 #用户
 class User(AbstractUser):
     nickname = models.CharField(max_length=150, blank=True)
+    shopcart_id = models.CharField(max_length=150, blank=True)
 
 
 #订单
 class order(models.Model):
+    order_id = models.CharField(max_length=150)
     statue = models.CharField(max_length=150, default='待付款')
     order_consignee = models.CharField(max_length=150, default='')#收货人地址
     order_time = models.DateField(auto_now=True)
-    order_price = models.FloatField(default=1)
+    order_price = models.IntegerField(default=1)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 #订单详情
@@ -25,9 +27,11 @@ class order_detail(models.Model):
 
 #购物车
 class shopcart(models.Model):
-    goods_number = models.IntegerField(blank=True)
-    goods_all_price = models.IntegerField(blank=True)
+    goods_all_price = models.IntegerField(default=0)
+    shopcart_id = models.CharField(max_length=150)
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.shopcart_id
 
 #收货人管理
 class consignee(models.Model):
@@ -40,10 +44,11 @@ class consignee(models.Model):
 class goods(models.Model):
     title = models.CharField(max_length=150)
     desc = models.CharField(max_length=150)
-    price = models.FloatField()
+    price = models.IntegerField()
     pic_url = models.CharField(max_length=150)
     goods_detail = models.TextField(default='')
     # goods_detail_pic = models.CharField(max_length=150, default='')
+    goods_shopcart_number = models.IntegerField(default=1)
     goods_to_shopcart = models.ForeignKey(shopcart, on_delete=models.CASCADE, null=True, blank=True)
     goods_to_order_detail = models.ForeignKey(order_detail, on_delete=models.CASCADE, null=True, blank=True)
 

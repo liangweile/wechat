@@ -56,13 +56,23 @@ def mylogout(request):
 @login_required
 def shopcart_add(req, goods_id, goods_number):
     good = goods.objects.get(id=goods_id)
+    good.goods_shopcart_number = goods_number
+    good.save()
     user = User.objects.get(username=req.user.username)
-    if user.shopcart:
-        return render(req, 'shopcart.html')
+    user.shopcart.goods_set.add(good)
+    goods_list = user.shopcart.goods_set.all()
+    all_price=0
+    for goods_ in goods_list:
+        all_price += goods_.price * goods_.goods_shopcart_number
+    user.shopcart.goods_all_price = all_price
+    user.shopcart.save()
+    return render(req, 'shopcart.html', {"goods_list":goods_list, "shopcart":user.shopcart})
 
 @login_required
 def shopcart(req):
-    return render(req, 'shopcart.html')
+    user = User.objects.get(username=req.user.username)
+    goods_list = user.shopcart.goods_set.all()
+    return render(req, 'shopcart.html', {"goods_list":goods_list, "shopcart":user.shopcart})
 
 #所有订单
 @login_required
@@ -242,7 +252,14 @@ def tidings(req):
 
 #确认订单
 def tureorder(req):
-    return render(req, 'tureorder.html')
+    for i in range(0, 100):
+        if req.POST[str(i)].value:
+            good = goods.objects.get(id=req.POST[str(i)].value)
+            user = User.objects.get(username=req.user.username)
+            user.order.goods_set.add(good)
+    goods_list = user.order.goods_set.all()
+
+    return HttpResponse()
 
 #选择校区
 def village(req):
