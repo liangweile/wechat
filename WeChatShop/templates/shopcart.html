@@ -67,7 +67,7 @@
         <input id="all" onclick="checkall()" type="checkbox">
     </label>
     <a class="del">全选</a>
-    <a class="js-btn" onclick="post()" name="tureorder">去结算</a>
+    <a href="javascript:post()" class="js-btn" onclick="check()" name="tureorder">去结算</a>
     <div class="js-text">
         <P>合计：<b>￥{{shopcart.goods_all_price}}</b></P>
         <p class="js-car">免费配送</p>
@@ -151,23 +151,24 @@
 <script>
     function post()
     {
-        var form = document.createElement("form");
         var check = document.getElementsByName("check");
+        var form = document.createElement("form");
         document.body.appendChild(form);
+        form.method = 'post';
+        form.action = 'tureorder.html';
         var flug = 0;
-        form.method = "post";
-        form.action = "/tureorder.html";
+        var j = 0;
         for(var i=0;i<check.length;i++)
         {
-            var input = document.createElement("input");
-            input.name = i;
             if(check[i].checked == true)
             {
-                flug = 1;
                 var input = document.createElement("input");
-                input.type = "hidden";
+                input.type = 'hidden';
+                input.name = j;
                 input.value = check[i].value;
-                form.appendChild(input);
+                flug = 1;
+                j++;
+                form.appendChild(input)
             }
         }
         if(flug==1)
@@ -178,7 +179,6 @@
         {
             alert('请选择商品');
         }
-
     }
 
 </script>

@@ -12,7 +12,7 @@ urlpatterns = [
     path('saftystep.html', views.saftystep),
     path('login.html', views.mylogin, name='login'),
     path('logout', views.mylogout, name='logout'),
-    path('shopcart.html', views.shopcart, name='shopcart'),
+    path('shopcart.html', views.shopcart_views, name='shopcart'),
     path('allorder.html', views.allorder),
     path('message.html', views.message),
     path('address.html', views.address),
@@ -40,7 +40,7 @@ urlpatterns = [
     path('myrecommend.html', views.myrecommend),
     path('news.html', views.news),
     path('newsdetail.html', views.newsdetail),
-    path('order.html', views.order),
+    path('order.html', views.order_views),
     path('orderdetail.html', views.orderdetail),
     path('password.html', views.password, name="password"),
     path('pay.html', views.pay),
@@ -53,10 +53,9 @@ urlpatterns = [
     path('speed.html', views.speed),
     path('step.html', views.step),
     path('tidings.html', views.tidings),
-    url('tureorder.html', views.tureorder, name='tureorder'),
+    path('tureorder.html', views.tureorder, name='tureorder'),
     path('village.html', views.village),
     path('ygq.html', views.ygq),
     path('yhq.html', views.yhq),
-    url(r'shopcart-add/goods_id=(?P<goods_id>\d+)/goods_number=(?P<goods_number>\d+).html', views.shopcart_add, name="shopcart_a")
 ]
 

@@ -1,6 +1,6 @@
 #-*- coding:utf-8 -*-
 from django.shortcuts import render
-from Shop.models import goods, shopcart
+from Shop.models import goods, shopcart, consignee, order
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
 from django.http import HttpResponseRedirect, HttpResponse
@@ -34,6 +34,19 @@ def infor(req):
 #安全设置
 def saftystep(req):
     return render(req, 'saftystep.html')
+#注册
+def reg(req):
+    if req.POST:
+        username = req.POST['username']
+        password = req.POST['password']
+        user = User.objects.create_user(username=username, password=password)
+        shopcart_user = shopcart.objects.create(user=user)
+        consignee_user = user.consignee_set.create(consignee_sign=True, consignee_name='', consignee_address='', consignee_phone='')
+        order_user = user.order_set.create(user=user, order_pk=consignee_user)
+        user.save()
+        return HttpResponseRedirect('/member.html')
+    return render(req, 'reg.html')
+
 
 #登录
 def mylogin(request):
@@ -54,22 +67,22 @@ def mylogout(request):
 
 #购物车
 @login_required
-def shopcart_add(req, goods_id, goods_number):
-    good = goods.objects.get(id=goods_id)
-    good.goods_shopcart_number = goods_number
-    good.save()
-    user = User.objects.get(username=req.user.username)
-    user.shopcart.goods_set.add(good)
-    goods_list = user.shopcart.goods_set.all()
-    all_price=0
-    for goods_ in goods_list:
-        all_price += goods_.price * goods_.goods_shopcart_number
-    user.shopcart.goods_all_price = all_price
-    user.shopcart.save()
-    return render(req, 'shopcart.html', {"goods_list":goods_list, "shopcart":user.shopcart})
-
-@login_required
-def shopcart(req):
+def shopcart_views(req):
+    if req.POST:
+        goods_number = req.POST['number']
+        goods_id = req.POST['goods_id']
+        good = goods.objects.get(id=goods_id)
+        good.goods_shopcart_number += int(goods_number)
+        good.save()
+        user = User.objects.get(username=req.user.username)
+        user.shopcart.goods_set.add(good)
+        goods_list = user.shopcart.goods_set.all()
+        all_price=0
+        for goods_ in goods_list:
+            all_price += goods_.price * goods_.goods_shopcart_number
+        user.shopcart.goods_all_price = all_price
+        user.shopcart.save()
+        return render(req, 'shopcart.html', {"goods_list": goods_list, "shopcart": user.shopcart})
     user = User.objects.get(username=req.user.username)
     goods_list = user.shopcart.goods_set.all()
     return render(req, 'shopcart.html', {"goods_list":goods_list, "shopcart":user.shopcart})
@@ -77,7 +90,45 @@ def shopcart(req):
 #所有订单
 @login_required
 def allorder(req):
-    return render(req, 'allorder.html')
+    user = User.objects.get(username=req.user.username)
+    orders = user.order_set.all()
+    return render(req, 'allorder.html',{'orders':orders})
+#订单
+def order_views(req):
+    user = User.objects.get(username=req.user.username)
+    orderset = user.order_set.get(order_sign=True)
+    orderset.order_sign = False
+    goods_list = orderset.goods_set.all()
+    for goods in goods_list:
+        user.shopcart.goods_set.remove(goods)
+        goods.goods_shopcart_number = 0
+    order_consignee = orderset.order_pk
+    orderset.save()
+    return render(req, 'order.html', {'goods_list':goods_list, 'order_consignee':order_consignee,'shopcart':user.shopcart})
+
+#结算
+def tureorder(req):
+    user = User.objects.get(username=req.user.username)
+    order_consignee = user.consignee_set.get(consignee_sign=True)
+    createorder = order.objects.create(user=user, order_pk=order_consignee)
+    for i in range(0, len(req.POST)):
+        goods_id = req.POST[str(i)]
+        goods_order = goods.objects.get(id=goods_id)
+        createorder.goods_set.add(goods_order)
+        createorder.order_price += goods_order.price * goods_order.goods_shopcart_number
+    goods_list = createorder.goods_set.all()
+    createorder.save()
+    return render(req, 'tureorder.html', {"goods_list":goods_list, "allprice":createorder.order_price})
+
+#订单详情
+def orderdetail(req):
+    return render(req, 'orderdetail.html')
+
+#收货地址
+def gladdress(req):
+    user = User.objects.get(username=req.user.username)
+    consignee_all = user.consignee_set.all()
+    return render(req, 'gladdress.html',{'consignee_all':consignee_all})
 
 #动态
 @login_required
@@ -129,10 +180,6 @@ def detail(req, goods_id):
 def forgetpassword(req):
     return render(req, 'forgetpassword.html')
 
-#收货地址
-def gladdress(req):
-    return render(req, 'gladdress.html')
-
 #积分
 def integral(req):
     return render(req, 'integral.html')
@@ -181,13 +228,6 @@ def news(req):
 def newsdetail(req):
     return render(req, 'newdetail.html')
 
-#确认订单
-def order(req):
-    return render(req, 'order.html')
-
-#订单详情
-def orderdetail(req):
-    return render(req, 'orderdetail.html')
 
 #密码
 def password(req):
@@ -228,16 +268,6 @@ def recommend(req):
 def records(req):
     return render(req, 'records.html')
 
-#注册
-def reg(req):
-    if req.POST:
-        username = req.POST['username']
-        password = req.POST['password']
-        user = User.objects.create_user(username=username, password=password)
-        user.save()
-        return HttpResponseRedirect('/member.html')
-    return render(req, 'reg.html')
-
 #发布动态
 def release(req):
     return render(req, 'release.html')
@@ -249,17 +279,6 @@ def speed(req):
 #消息中心
 def tidings(req):
     return render(req, 'tidings.html')
-
-#确认订单
-def tureorder(req):
-    for i in range(0, 100):
-        if req.POST[str(i)].value:
-            good = goods.objects.get(id=req.POST[str(i)].value)
-            user = User.objects.get(username=req.user.username)
-            user.order.goods_set.add(good)
-    goods_list = user.order.goods_set.all()
-
-    return HttpResponse()
 
 #选择校区
 def village(req):
