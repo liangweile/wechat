@@ -295,15 +295,20 @@ def contact(req):
 
 # 商品详情
 def detail(req, goods_id):
-    user = User.objects.get(username=req.user.username)
-    goods_list = user.goods_set.all()
-    goods_detail = goods.objects.get(id=goods_id)
-    if goods_detail in goods_list:
-        sign = 1
+    if req.user.is_authenticated:
+        user = User.objects.get(username=req.user.username)
+        goods_list = user.goods_set.all()
+        goods_detail = goods.objects.get(id=goods_id)
+        if goods_detail in goods_list:
+            sign = 1
+        else:
+            sign = 0
+        comment_list = goods_detail.comment_set.all()
+        return render(req, 'detail.html', {'goods_detail': goods_detail, "collect":sign, "comment_list":comment_list})
     else:
-        sign = 0
-    comment_list = goods_detail.comment_set.all()
-    return render(req, 'detail.html', {'goods_detail': goods_detail, "collect":sign, "comment_list":comment_list})
+        goods_detail = goods.objects.get(id=goods_id)
+        return render(req, 'detail.html', {'goods_detail':goods_detail})
+
 
 
 # 忘记密码
