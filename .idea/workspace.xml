@@ -3,31 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="934f7520-def3-459d-ab1d-a4b78bf62559" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/Shop/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/Shop/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/Shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/Shop/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/Shop/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/Shop/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/Shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/Shop/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeChatShop/Shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/Shop/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/WeChatShop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/WeChatShop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/address.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/allorder.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/allorder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/collect-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/collect-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/collect.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/collect.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/gladdress.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/gladdress.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/integral.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/integral.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/member.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/member.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/orderdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/orderdetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/pay.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/recharge.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/recharge.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/records.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/records.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/shopcart.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/shopcart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeChatShop/templates/tureorder.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeChatShop/templates/tureorder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,8 +20,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="305" column="112" selection-start-line="305" selection-start-column="112" selection-end-line="305" selection-end-column="112" />
+            <state relative-caret-position="178">
+              <caret line="297" column="32" lean-forward="true" selection-start-line="297" selection-start-column="32" selection-end-line="297" selection-end-column="32" />
               <folding>
                 <element signature="e#23#58#0" expanded="true" />
               </folding>
@@ -53,11 +29,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WeChatShop/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WeChatShop/templates/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="115" column="26" lean-forward="true" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
+            <state relative-caret-position="1725">
+              <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -68,7 +53,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
+            <state relative-caret-position="720">
               <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -80,7 +65,7 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="135">
               <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -92,7 +77,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="1110">
               <caret line="76" column="17" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="17" />
               <folding>
                 <element signature="e#21#49#0" expanded="true" />
@@ -189,7 +174,6 @@
         <option value="$PROJECT_DIR$/WeChatShop/templates/recharge.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/tureorder.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/yhq.html" />
-        <option value="$PROJECT_DIR$/WeChatShop/templates/index.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/collect.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/collect-edit.html" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/pay.html" />
@@ -201,11 +185,12 @@
         <option value="$PROJECT_DIR$/WeChatShop/Shop/models.py" />
         <option value="$PROJECT_DIR$/WeChatShop/Shop/urls.py" />
         <option value="$PROJECT_DIR$/WeChatShop/templates/detail.html" />
+        <option value="$PROJECT_DIR$/WeChatShop/templates/index.html" />
         <option value="$PROJECT_DIR$/WeChatShop/Shop/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="470" />
     <option name="y" value="25" />
     <option name="width" value="919" />
@@ -267,26 +252,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-6" width="1366" height="725" extended-state="6" />
+    <frame x="-1" y="-11" width="1368" height="731" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49675325" weight="0.47360596" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2857143" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32919255" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3285968" />
-      <window_info id="Favorites" order="2" sideWeight="0.5032467" side_tool="true" weight="0.47360596" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" sideWeight="0.5032467" side_tool="true" weight="0.47360596" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.2857143" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -479,9 +464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
-          <folding>
-            <element signature="e#2516#2522#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -496,19 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="151" column="33" selection-start-line="151" selection-start-column="33" selection-end-line="151" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#ul#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#ul#2;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#0;n#ul#2;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#ul#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -544,10 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-          <folding>
-            <element signature="n#li#1;n#ul#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#2;n#ul#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -555,9 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-440">
           <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -582,18 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="128" column="47" selection-start-line="128" selection-start-column="47" selection-end-line="128" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#a#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/templates/pay.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -608,13 +558,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/newcomment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="52" column="95" selection-start-line="52" selection-start-column="95" selection-end-line="52" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/newcomment.html" />
     <entry file="file://$PROJECT_DIR$/WeChatShop/templates/shopcart.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -624,7 +568,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="135">
           <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -643,24 +587,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2487">
           <caret line="259" column="17" selection-start-line="259" selection-start-column="17" selection-end-line="259" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#14;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#18;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#18;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
+        <state relative-caret-position="720">
           <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -670,7 +602,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="1110">
           <caret line="76" column="17" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="17" />
           <folding>
             <element signature="e#21#49#0" expanded="true" />
@@ -680,18 +612,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/templates/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="115" column="26" lean-forward="true" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
+        <state relative-caret-position="1725">
+          <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatShop/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WeChatShop/Shop/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="305" column="112" selection-start-line="305" selection-start-column="112" selection-end-line="305" selection-end-column="112" />
+        <state relative-caret-position="178">
+          <caret line="297" column="32" lean-forward="true" selection-start-line="297" selection-start-column="32" selection-end-line="297" selection-end-column="32" />
           <folding>
             <element signature="e#23#58#0" expanded="true" />
           </folding>
