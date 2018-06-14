@@ -1,4 +1,4 @@
-#!/home/xiaojun/PycharmProjects/weixin/venv/bin/python
+#!/home/ubuntu/wechat/venv/bin/python3.5
 from django.core import management
 
 if __name__ == "__main__":
