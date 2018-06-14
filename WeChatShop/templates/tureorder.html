@@ -37,8 +37,8 @@
                 <img src="{{goods.pic_url}}" class="shop-pic" />
                 <div class="order-mid">
                 	<div class="tit">{{ goods.title}}</div>
-                	<div class="order-price">￥{{ goods.price }} <i>X{{goods.goods_shopcart_number}}</i></div>
-					<input type="hidden" id="goods_id" value="{{goods.id}}">
+                	<div class="order-price">￥{{ goods.price }} <i>X{{goods.goods_order_number}}</i></div>
+					<input type="hidden" name="goods_id_num" value="{{goods.id}}:{{goods.goods_order_number}}">
                 </div>
 	    	</li>
 			{% endfor %}
@@ -53,10 +53,12 @@
 	    		<i>包邮</i>
 	    	</li>
 	    	<li class="order-infor-first">
-	    		<a href="">积分抵费></a>
+				<span>积分抵费:</span>
+				<a href="integral.html"><p>></p></a>
 	    	</li>
 	    	<li class="order-infor-first">
-	    		<a href="">选择优惠券></a>
+				<span>选择优惠券:</span>
+	    		<a href="yhq.html"><p>></p></a>
 	    	</li>
 	    </ul>
 	    <div style="background: #eee; height: 10px;"></div>
@@ -67,7 +69,7 @@
 	    	<div class="order-text">
 	    		应付总额：<span>￥188</span>
 	    	</div>
-	    	<a href="order.html" class="js-btn">提交订单</a>
+	    	<a href="javascript:tijiao()" class="js-btn">提交订单</a>
 	    </div>
 <!--底部-->
  <div style="height: 55px;"></div>
@@ -106,7 +108,25 @@
           </li>
       </ul>
 </div>
-
+		<script>
+			function tijiao()
+			{
+				var goodsidnum = document.getElementsByName("goods_id_num");
+				var form = document.createElement("form");
+				form.method = "post";
+				form.action = "/order.html"
+				document.body.appendChild(form);
+				for(var i=0;i<goodsidnum.length;i++)
+				{
+					var input1 = document.createElement("input")
+					input1.name = i
+					input1.value = goodsidnum[i].value
+					input1.type = 'hidden'
+					form.appendChild(input1);
+				}
+				form.submit();
+			}
+		</script>
 <script src="{% static 'js/jquery.min.js'%}"></script>
 <script src="{% static 'js/amazeui.min.js'%}"></script>
 	</body>

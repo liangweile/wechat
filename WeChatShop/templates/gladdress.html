@@ -34,20 +34,71 @@
 	    <div style="height: 49px;"></div>
 	    <ul class="address-list">
 			{% for consignee in consignee_all %}
+			{% if consignee.consignee_sign == True %}
 	    	<li class="curr">
 	    		<p>收货人：{{consignee.consignee_name}}&nbsp;&nbsp;{{consignee.consignee_phone}}</p>
 	    		<p class="order-add1">{{consignee.consignee_address}}</p>
 	    	    <hr />
 	    	    <div class="address-cz">
 	    	    	<label class="am-radio am-warning">
-                       <input type="radio" name="radio" value="{{consignee.consignee_name}}" data-am-ucheck checked> 设为默认
+                       <input type="radio" name="check" value="{{consignee.consignee_id}}"  data-am-ucheck checked> 设为默认
                     </label>
                     <a href=""><img src="{% static 'images/bj.png'%}" width="18" />&nbsp;编辑</a>
-                    <a href="">删除</a>
 	    	    </div>
 	    	</li>
+			{% else %}
+			<li>
+	    		<p>收货人：{{consignee.consignee_name}}&nbsp;&nbsp;{{consignee.consignee_phone}}</p>
+	    		<p class="order-add1">{{consignee.consignee_address}}</p>
+	    	    <hr />
+	    	    <div class="address-cz">
+	    	    	<label class="am-radio am-warning">
+                       <input type="radio" name="check" value="{{consignee.consignee_id}}"  data-am-ucheck onclick="moren()"> 设为默认
+                    </label>
+                    <a href=""><img src="{% static 'images/bj.png'%}" width="18" />&nbsp;编辑</a>
+                    <a href="javascript:del({{consignee.consignee_id}})">删除</a>
+	    	    </div>
+	    	</li>
+			{% endif%}
 			{% endfor %}
 	    </ul>
+		<script>
+			function moren()
+			{
+				var all = document.getElementsByName("check");
+				for(var i=0;i<all.length;i++)
+				{
+					if(all[i].checked==true)
+					{
+						var form = document.createElement("form");
+						document.body.appendChild(form);
+						form.method = 'post';
+						form.action = '/gladdress.html';
+						var input1 = document.createElement("input");
+						input1.name = 'input1';
+						input1.value = all[i].value;
+						input1.type = 'hidden';
+						form.appendChild(input1);
+						form.submit();
+					}
+				}
+			}
+		</script>
+		<script>
+			function del(x)
+			{
+				var form = document.createElement("form");
+				document.body.appendChild(form);
+				form.method = 'post'
+				form.action = '/deladdress'
+				var input2 = document.createElement("input");
+				input2.name = 'input2';
+				input2.value = x;
+				input2.type = 'hidden';
+				form.appendChild(input2);
+				form.submit();
+			}
+		</script>
 <script src="{% static 'js/jquery.min.js'%}"></script>
 <script src="{% static 'js/amazeui.min.js'%}"></script>
 	</body>

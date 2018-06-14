@@ -1102,8 +1102,76 @@ MARGIN-LEFT: auto;width: 80%;height: 300px;background: #FFFFFF;z-index:9999999;}
 .share .popup-close{ line-height: 50px; background: #fff; text-align: center; color: #464646;}
 .dt-top-right .content a{ color: #787878;}
 
+.contaniner {
+    width: 100%;
+    overflow: hidden;
+}
+.fixed-cont {
+    margin-top: 15%;
+    margin-bottom: 20%;
+}
+.assess {
+    width: 100%;
+}
+.assess p {
+    width: 92%;
+    padding: 4%;
+    overflow: hidden;
+    background-color: #fff;
+}
+.assess p textarea {
+    float: right;
+    text-align: justify;
+    width: 100%;
+    border: none;
+    font-size: 0.9em;
+    color: #666;
+}
+.assess ul {
+    width: 90%;
+    padding: 2% 5%;
+    background-color: #fff;
+    overflow: hidden;
+    margin-top: 3%;
+}
+.assess ul li {
+    float: left;
+    font-size: 0.9em;
+    color: #666;
+}
+.assess ul .assess-right {
+    float: right;
+    width: 40%;
+    overflow: hidden;
+}
+.assess-right div{
+	width: 32%;
+	float: left;
+    text-align: center;
+    display: flex;
+}
+.assess-footer {
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.assess-footer li {
+    position: relative;
+    float: left;
+    width: 70%;
+    padding: 3% 0;
+}
 
-
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 3px;
+}
 
 
 

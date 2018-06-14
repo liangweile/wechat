@@ -27,26 +27,51 @@
             </h1>
 	    </header>
 	    <div style="height: 60px;"></div>
-	    <ul class="address">
-	    	<li>
-	    		<a href="village.html"><input type="text" class="add-input"  disabled="disabled" placeholder="宿舍区" />
-	    		<i class="am-icon-angle-right" style="float: right; margin-top: 5px;"></i></a>
-	    	</li>
-	    	<li>
-	    		<a href="village.html"><input type="text" class="add-input"  disabled="disabled" placeholder="哪栋楼" />
-	    		<i class="am-icon-angle-right" style="float: right; margin-top: 5px;"></i></a>
-	    	</li>
-	    	<li><input type="text" class="add-input" placeholder="你在哪" /></li>
-	    	<li><input type="text" class="add-input" placeholder="收货人" /></li>
-	    	<li><input type="text" class="add-input" placeholder="13000000000" /></li>
-	    </ul>
+	    <form class="address" method="post" action="address.html" id="form" onsubmit="return post()">
+	    	<li><input name="address" type="text" class="add-input" placeholder="你在哪" /></li>
+	    	<li><input name="name" type="text" class="add-input" placeholder="收货人" /></li>
+	    	<li><input name="phone" type="text" class="add-input" placeholder="13000000000" /></li>
 	    <div class="moren">
 	    	<label class="am-checkbox am-warning">
-                 <input type="checkbox" checked="checked" value="" data-am-ucheck checked>设为默认
+                 <input id="check" type="checkbox"  name="check" value="true" data-am-ucheck checked onclick="checkall()">设为默认
             </label>
-            
+
 	    </div>
-	    <input type="button" class="login-btn" value="确认提交">
+	    <input type="submit" class="login-btn" value="确认提交">
+		</form>
+		<script>
+			function post()
+			{
+				var checkbutton = document.getElementById("check");
+				if(form.address.value=='')
+				{
+					alert('请填写地址');
+					return false;
+				}
+				if(form.name.value=='')
+				{
+					alert("请填写收货人");
+					return false;
+				}
+				if(form.phone.value=='')
+				{
+					alert("请填写电话号码");
+					return false;
+				}
+			}
+			function checkall()
+			{
+				var check = document.getElementById('check');
+				if (check.checked==true)
+				{
+					check.value='true';
+				}
+				else
+				{
+					check.value="false";
+				}
+			}
+		</script>
 <script src="{% static 'js/jquery.min.js'%}"></script>
 <script src="{% static 'js/amazeui.min.js'%}"></script>
 	</body>

@@ -27,42 +27,86 @@
 	    </header>
 	    <div style="height: 49px;"></div>
 	    <ul class="order-detail">
-	       <li><span>订单名称：</span>无穷爱辣鸡爪（精品）50g</li>
-	       <li><span>订单总价：</span>￥69.0</li>
+	       <li><span>订单编号：</span>{{order.order_id}}</li>
+	       <li><span>订单总价：</span>￥{{order.order_price_pay}}</li>
 	    </ul>
 	    <ul class="pay-style">
 	    	<li>
-		   	 	<img src="images/zhi.png" width="50" /> 
+		   	 	<img src="{% static 'images/zhi.png'%}" width="50" />
 		   	 	<span>
 		   	 		<p>支付宝</p>
 		   	 		<p class="descript">推荐有支付宝账号的用户使用</p>
 		   	 	</span>
 		   	 	<label class="am-radio-inline">
-				    <input type="radio" checked="checked" name="radio10" value="1" data-am-ucheck>
+				    <input type="radio" checked="checked" name="radio10" value="zhifubao" data-am-ucheck>
 				</label>
 	   	    </li>
 	   	    <li>
-		   	 	<img src="images/wei.png" width="50" /> 
+		   	 	<img src="{% static 'images/wei.png'%}" width="50" />
 		   	 	<span>
 		   	 		<p>微信支付</p>
 		   	 		<p class="descript">推荐安装微信5.0及以上版本的使用</p>
 		   	 	</span>
 		   	 	<label class="am-radio-inline">
-				    <input type="radio" name="radio10" value="1" data-am-ucheck>
+				    <input type="radio" name="radio10" value="weixin" data-am-ucheck>
 				 </label>
 		   	</li>
 		   	<li>
-		   	 	<img src="images/ye.png" width="50" /> 
+		   	 	<img src="{% static 'images/ye.png'%}" width="50" />
 		   	 	<span>
 		   	 		<p>余额宝</p>
 		   	 		<p class="descript">账户余额支付</p>
 		   	 	</span>
 		   	 	<label class="am-radio-inline">
-				    <input type="radio" name="radio10" value="1" data-am-ucheck>
+				    <input type="radio" name="radio10" value="zhanghu" data-am-ucheck>
 				 </label>
 		   	</li>
 	    </ul>
-	    <input type="button" class="login-btn" value="确认支付">
+	    <input type="button" class="login-btn" value="确认支付" onclick="pay('{{order.order_id}}')">
+		{% if messages %}
+		{% for message in messages %}
+		{% if message.tags == "info" %}
+		<script type="text/javascript">
+			window.alert("{{ message }}");
+			window.location.href='/index.html';
+
+		</script>
+		{% endif %}
+		{% if message.tags == "error" %}
+		<script type="text/javascript">
+			window.alert("{{ message }}");
+			window.location.href='/recharge.html';
+		</script>
+		{% endif %}
+		{% endfor %}
+		{% endif %}
+		<script>
+			function pay(x)
+			{
+				var radiocheck = document.getElementsByName("radio10")
+				var form = document.createElement("form");
+				form.method = "post";
+				form.action = "/pay.html"
+				document.body.appendChild(form);
+				var input1 = document.createElement("input");
+				input1.type = "hidden";
+				input1.name = "paymethod";
+				for(var i=0;i<radiocheck.length;i++)
+				{
+					if(radiocheck[i].checked==true)
+					{
+						input1.value = radiocheck[i].value
+					}
+				}
+				var input = document.createElement("input");
+				input.type = "hidden";
+				input.name = "order_id";
+				input.value = x;
+				form.appendChild(input);
+				form.appendChild(input1);
+				form.submit();
+			}
+		</script>
 	    <script src="{% static 'js/jquery.min.js'%}"></script>
         <script src="{% static 'js/amazeui.min.js'%}"></script>
 	</body>

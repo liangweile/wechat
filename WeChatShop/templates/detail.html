@@ -50,10 +50,17 @@
 <div class="detal-info" style="position: relative; width: 100%;">
     <p>{{goods_detail.title}}</p>
     <h2>商城价：<span>￥{{goods_detail.price}}</span></h2>
+    {% if collect == 1 %}
     <div class="heart">
+        <img src="{% static 'images/redherat.png'%}" width="25" id="imgflag" onclick="changeImage()"/>
+        <p>收藏</p>
+    </div>
+    {% else %}
+     <div class="heart">
         <img src="{% static 'images/herat.png'%}" width="25" id="imgflag" onclick="changeImage()"/>
         <p>收藏</p>
     </div>
+    {% endif %}
 </div>
 <div class="d-amount">
     <h4>数量：</h4>
@@ -78,7 +85,7 @@
             <img src="{% static 'images/test11.png'%}"/>
         </div>
         <div class="am-tab-panel am-fade detail " id="tab2">
-            <!--<div class="comment">
+            <div class="comment">
                 <span>好评：</span>
                 <div class="com-good"></div>
                 <span>100%</span>
@@ -92,35 +99,27 @@
                 <span>差评：</span>
                 <div class="com-bad"></div>
                 <span>0%</span>
-            </div>-->
+            </div>
+            {% for comment in comment_list %}
             <ul class="comment-list">
                 <li class="current"><a href="">全部</a></li>
-                <li><a href="">好评（20）</a></li>
-                <li><a href="">中评（5）</a></li>
-                <li><a href="">差评（0）</a></li>
+                <li><a id="good" href="">好评（20）</a></li>
+                <li><a id="middle" href="">中评（5）</a></li>
+                <li><a id="bad" href="">差评（0）</a></li>
             </ul>
             <ul class="comment-pic">
                 <li>
                     <div class="tit">
                         <img src="{% static 'images/tx.png'%}" class="tx"/>
-                        <span>songke2014</span>
-                        <i> [2016-01-01]</i>
+                        <span>{{comment.comment_name}}</span>
+                        <i> {{comment.comment_time}}</i>
                     </div>
                     <div class="comment-con">
-                        买了些给家人，都说不错！
-                    </div>
-                </li>
-                <li>
-                    <div class="tit">
-                        <img src="{% static 'images/tx.png'%}" class="tx"/>
-                        <span>songke2014</span>
-                        <i> [2016-01-01]</i>
-                    </div>
-                    <div class="comment-con">
-                        买了些给家人，都说不错！
+                        {{comment.comment_content}}
                     </div>
                 </li>
             </ul>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -130,7 +129,7 @@
 <div style=" height: 55px;"></div>
 <ul class="fix-shopping">
     <li><a href="javascript:postform()" class="join" >加入购物车</a></li>
-    <li><a href="/tureorder.html" class="imm-buy">立即购买</a></li>
+    <li><a href="javascript:tureorder()" class="imm-buy">立即购买</a></li>
 </ul>
 
 <script>
@@ -176,9 +175,35 @@
  		form.submit();
     }
 </script>
+<script>
+    function tureorder()
+    {
+        var form = document.createElement("form");
+        var number = document.getElementById("id");
+        form.method = "post";
+        form.action = "/tureorder.html";
+        document.body.appendChild(form);
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = "0"
+        input.value = {{goods_detail.id}}+":"+number.value
+        form.appendChild(input);
+        form.submit();
+    }
+</script>
 
 
 <script src="{% static 'js/jquery.min.js'%}"></script>
+<script>
+    $("#imgflag").click(function()
+    {
+        $.post("/collect.html", {"goods_id":{{goods_detail.id}}}, function(res){})
+    });
+    $("#good").click(function(){$.post("/detail.html",{"show":good},function(res){})});
+    $("#all").click(function(){$.post("/detail.html",{"show":all},function(res){})});
+    $("#middle").click(function(){$.post("/detail.html",{"show":middle},function(res){})});
+    $("#bad").click(function(){$.post("/detail.html",{"show":bad},function(res){})});
+</script>
 <script src="{% static 'js/amazeui.min.js'%}"></script>
 </body>
 </html>

@@ -33,10 +33,10 @@
 	    <div style="height: 49px;"></div>
 	    <div class="record-ye">
 	   	  <p>当前余额</p>
-	   	  <b>￥1.00</b>
+	   	  <b>￥{{user.money}}</b>
 	    </div>
 	    <div class="re-chong">
-	      <a href=""><img src="images/ka.png" width="30"/><span>充值</span></a>
+	      <a href="recharge.html"><img src="{% static 'images/ka.png'%}" width="30"/><span>充值</span></a>
 	    </div>
 	    <ul class="money-out">
 	    	<li class="current"><a href="">收入</a></li>
@@ -44,7 +44,7 @@
 	    </ul>
 	    <ul class="out-list">
 	    	<li>
-	    		<img src="images/weichong.png" width="30" />
+	    		<img src="{% static 'images/weichong.png'%}" width="30" />
 	    		<span>
 	    			<p>微信充值</p>
 	    			<p style="color: #a4a4a4; font-size: 1.4rem;">2016-01-07 16:34:20</p>

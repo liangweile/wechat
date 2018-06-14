@@ -30,10 +30,10 @@
 	    <div style="height: 49px;"></div>
 	    <div class="record-ye">
 	   	  <p>当前积分</p>
-	   	  <b>10</b>
+	   	  <b>{{user.jifen}}</b>
 	    </div>
 	    <div class="re-chong">
-	      <a href="integralexchange.html"><img src="images/gift.png" width="22"/><span>兑换</span></a>
+	      <a href="integralexchange.html"><img src="{% static 'images/gift.png'%}" width="22"/><span>兑换</span></a>
 	    </div>
 	    <ul class="money-out">
 	    	<li class="current"><a href="">获得</a></li>
@@ -41,7 +41,7 @@
 	    </ul>
 	    <ul class="out-list">
 	    	<li>
-	    		<img src="images/candar.png" width="30" />
+	    		<img src="{% static 'images/candar.png'%}" width="30" />
 	    		<span>
 	    			<p>签到送积分</p>
 	    			<p style="color: #a4a4a4; font-size: 1.4rem;">2016-01-07 16:34:20</p>
@@ -49,7 +49,7 @@
 	    		<i>+5</i>
 	    	</li>
 	    	<li>
-	    		<img src="images/candar.png" width="30" />
+	    		<img src="{% static 'images/candar.png'%}" width="30" />
 	    		<span>
 	    			<p>签到送积分</p>
 	    			<p style="color: #a4a4a4; font-size: 1.4rem;">2016-01-07 16:34:20</p>

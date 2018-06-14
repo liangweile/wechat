@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>超市</title>
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="{% static '/theme/default/images/favicon.png'%}">
+    <link href="{% static 'css/amazeui.min.css'%}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'js/jquery-1.10.2.min.js'%}"></script>
+</head>
+<body>
+<header data-am-widget="header" class="am-header am-header-default sq-head ">
+    <div class="am-header-left am-header-nav">
+        <a href="javascript:history.back()" class="">
+            <i class="am-icon-chevron-left"></i>
+        </a>
+    </div>
+    <h1 class="am-header-title">
+        评价
+    </h1>
+</header>
+<ul class="shopcart-list">
+
+    {% for goods in goods_list %}
+    <li>
+        <label class="am-checkbox am-warning">
+            <input type="checkbox" name="check" value="{{goods.id}}">
+        </label>
+        <img src="{{goods.pic_url}}" class="shop-pic"/>
+        <div class="shop-list-mid">
+            <div class="tit">{{goods.title}}</div>
+            <p>￥<b class="shop-list-price">{{goods.price}} </b></p>
+        </div>
+    </li>
+    {% endfor%}
+    <div style="height: 10px; background: #eee;"></div>
+</ul>
+		<div class="contaniner fixed-cont">
+			<!--1-->
+			<section class="assess">
+				<p>
+					<textarea rows="7" placeholder="请写下评论，对他人帮助很大哦～～"></textarea>
+				</p>
+				<ul>
+					<li>评价</li>
+					<li class="assess-right">
+						<div><input type="radio" name="radio" value="good" checked/><img src="{% static 'images/hua.png'%}"/></div>
+						<div><input type="radio" name="radio" value="middle"/><img src="{% static 'images/huah.png'%}"/></div>
+						<div><input type="radio" name="radio" value="bad"/><img src="{% static 'images/huae.png'%}"/></div>
+					</li>
+				</ul>
+			</section>
+        </div>
+		<footer class="assess-footer fixed-footer ">
+			<ul>
+				<li>
+					<input id="niming" type="checkbox" id="ass" />
+					<label>匿名评价</label>
+				</li>
+				<input id="comment" class="js-btn" type="button" value="发表评论" />
+			</ul>
+		</footer>
+<script src="{% static 'js/jquery.min.js'%}"></script>
+<script>
+<!--评论-->
+    $("#comment").click(function(){
+
+    if($("textarea").val()=='')
+    {
+        alert("请写入评论");
+    }
+    else if($("input[name='check']:checked").length==0)
+    {
+        alert("请选择商品");
+    }
+    else
+    {
+        var radiovalue = $("input[name='radio']:checked").val();
+        var data = [];
+        var j = 0;
+        $("input[name='check']:checked").each(function(){
+            var value = $(this).val();
+            data.push({name:j,value:value});
+            j += 1;
+            });
+        var text = $("textarea").val();
+        data.push({name:"text",value:text});
+        data.push({name:"radiovalue",value:radiovalue});
+        $.post('comment.html',data,function(response){alert(response)});
+        }
+    })
+
+</script>
+<script src="{% static 'js/amazeui.min.js'%}"></script>
+</body>
+</html>

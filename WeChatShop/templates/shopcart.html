@@ -40,22 +40,21 @@
     {% for goods in goods_list %}
     <li>
         <label class="am-checkbox am-warning">
-            <input type="checkbox" name="check" value="{{goods.id}}">
+            <input type="checkbox" name="check" value="{{goods.id}}" onclick="sum()">
         </label>
         <img src="{{goods.pic_url}}" class="shop-pic"/>
         <div class="shop-list-mid">
             <div class="tit">{{goods.title}}</div>
-            <b class="shop-list-price">￥{{goods.price}} </b>
+            <p>￥<b class="shop-list-price">{{goods.price}} </b></p>
         </div>
         <div class="list-cart1">
             <div class="d-stock">
                 <a class="decrease">-</a>
-                <input id="num" readonly="" class="text_box" name="" type="text"
+                <input id="num" readonly="" class="text_box" name="num" type="text"
                        value="{{goods.goods_shopcart_number}}">
                 <a class="increase">+</a>
             </div>
         </div>
-
     </li>
     {% endfor%}
     <div style="height: 10px; background: #eee;"></div>
@@ -64,12 +63,12 @@
 <div class="shop-fix">
 
     <label class="am-checkbox am-warning">
-        <input id="all" onclick="checkall()" type="checkbox">
+        <input id="all" onclick="checkall();sum();" type="checkbox">
     </label>
     <a class="del">全选</a>
     <a href="javascript:post()" class="js-btn" onclick="check()" name="tureorder">去结算</a>
     <div class="js-text">
-        <P>合计：<b>￥{{shopcart.goods_all_price}}</b></P>
+        <P>合计：￥<b id="goodsallprice"></b></P>
         <p class="js-car">免费配送</p>
     </div>
 </div>
@@ -146,12 +145,31 @@
                     }
              }
             }
+    function sum()
+    {
+        var check = document.getElementsByName("check");
+        var num = document.getElementsByName("num");
+        var price = document.getElementsByClassName("shop-list-price");
+        var goodsallprice = document.getElementById("goodsallprice")
+        var allprice = 0;
+        for(var i=0;i<check.length;i++)
+        {
+            if(check[i].checked == true)
+            {
+                allprice += price[i].innerHTML*num[i].value
+            }
+
+        }
+        goodsallprice.innerHTML = allprice
+
+    }
 
 </script>
 <script>
     function post()
     {
         var check = document.getElementsByName("check");
+        var num = document.getElementsByName("num");
         var form = document.createElement("form");
         document.body.appendChild(form);
         form.method = 'post';
@@ -165,7 +183,7 @@
                 var input = document.createElement("input");
                 input.type = 'hidden';
                 input.name = j;
-                input.value = check[i].value;
+                input.value = String(check[i].value+":"+String(num[i].value));
                 flug = 1;
                 j++;
                 form.appendChild(input)

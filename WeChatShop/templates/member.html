@@ -69,10 +69,10 @@
 		  		<a href="allorder.html">查看全部订单></a>
 		  	</div>
 		    <ul class="user-nav">
-		    	<li><a href="allorder.html"> <img src="{% static 'images/1-icon.png'%}"> <p>待付款</p></a></li>
-		    	<li><a href="allorder.html"> <img src="{% static 'images/1-icon1.png'%}"> <p>待收货</p></a></li>
-		    	<li><a href="allorder.html"> <img src="{% static 'images/1-icon2.png'%}"> <p>待评价</p></a></li>
-		    	<li><a href="allorder.html"> <img src="{% static 'images/1-icon3.png'%}"> <p>退换货</p></a></li>
+		    	<li><a href="javascript:post('待付款')"> <img src="{% static 'images/1-icon.png'%}"> <p>待付款</p></a></li>
+		    	<li><a href="javascript:post('待收货')"> <img src="{% static 'images/1-icon1.png'%}"> <p>待收货</p></a></li>
+		    	<li><a href="javascript:post('待评价')"> <img src="{% static 'images/1-icon2.png'%}"> <p>待评价</p></a></li>
+		    	<li><a href="javascript:post('退发货')"> <img src="{% static 'images/1-icon3.png'%}"> <p>退换货</p></a></li>
 		    </ul>
 		    <div class="u-list-main">
 		  		<img src="{% static 'images/order-my.png'%}" width="27" />
@@ -217,6 +217,21 @@
 		 new PopUp_api({el:'.index-qd',html:'.qd-box'});
 	})()
 </script>
+        <script>
+			function post(x)
+			{
+				var form = document.createElement("form");
+				form.method = "post";
+				form.action = "/allorder.html"
+				document.body.appendChild(form);
+				var input = document.createElement("input");
+				input.type = "hidden";
+				input.name = "statue";
+				input.value = x;
+				form.appendChild(input);
+				form.submit();
+			}
+		</script>
  
 <script src="{% static 'js/jquery.min.js'%}"></script>
 <script src="{% static 'js/amazeui.min.js'%}"></script>

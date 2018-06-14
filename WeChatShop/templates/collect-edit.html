@@ -26,56 +26,30 @@
   	            <a href="" class="">编辑</a>
             </h1>
             <div class="am-header-right am-header-nav">
-			    <a href="" class="">
-		        完成
+			    <a href="javascript:del()" class="">
+		        删除
 		        </a>
 			</div>
 	    </header>
 	    <div style="height: 49px;"></div>
 	    <ul class="list-pro" style="margin-top: 0;">
+			{% for goods in goods_collect %}
 	    	<li>
 	    		<label class="am-checkbox am-warning"  style="float: left; width: 5%; margin-top: 3.5rem;">
-                 <input type="checkbox" checked="checked" value="" data-am-ucheck checked>
+                 <input type="checkbox" name="check" value="{{goods.id}}" data-am-ucheck>
                 </label>
-	    		<a href="detail.html"><img src=" images/test10.png" class="list-pic" /></a>
+	    		<a href="detail-{{ goods.id }}.html"><img src="{{goods.pic_url}}" class="list-pic" /></a>
 	    		<div class="shop-list-mid" style="width: 60%;">
-                	<div class="tit"><a href="detail.html">法国加力果12个装 进口新鲜水果 嘎啦苹果 包邮</a></div>
-                	<div class="am-gallery-desc">￥52</div>
-                	<p>销量：5件</p>
+                	<div class="tit"><a href="detail.html">{{goods.title}}</a></div>
+                	<div class="am-gallery-desc">￥{{goods.price}}</div>
+                	<p>销量：{{goods.sale}}件</p>
                 </div>
 	    	</li>
-	        <li>
-	    		<label class="am-checkbox am-warning"  style="float: left; width: 5%; margin-top: 3.5rem;">
-                 <input type="checkbox" checked="checked" value="" data-am-ucheck checked>
-                </label>
-	    		<a href="detail.html"><img src=" images/test10.png" class="list-pic" /></a>
-	    		<div class="shop-list-mid" style="width: 60%;">
-                	<div class="tit"><a href="detail.html">法国加力果12个装 进口新鲜水果 嘎啦苹果 包邮</a></div>
-                	<div class="am-gallery-desc">￥52</div>
-                	<p>销量：5件</p>
-                </div>
-	    	</li>
-	    	<li>
-	    		<label class="am-checkbox am-warning"  style="float: left; width: 5%; margin-top: 3.5rem;">
-                 <input type="checkbox" checked="checked" value="" data-am-ucheck checked>
-                </label>
-	    		<a href="detail.html"><img src=" images/test10.png" class="list-pic" /></a>
-	    		<div class="shop-list-mid" style="width: 60%;">
-                	<div class="tit"><a href="detail.html">法国加力果12个装 进口新鲜水果 嘎啦苹果 包邮</a></div>
-                	<div class="am-gallery-desc">￥52</div>
-                	<p>销量：5件</p>
-                </div>
-	    	</li>
-	    	
+			{% endfor %}
 	    </ul>
 	    
 	    
 	    		<!--底部-->
- <div style=" height: 55px;"></div>
- <ul class="fix-shopping">
- 	<li><a href="shopcart.html" class="join">加入购物车</a></li>
- 	<li><a href="tureorder.html" class="imm-buy">立即购买</a></li>
- </ul>
 	    
 
  
@@ -101,6 +75,30 @@
 		})
 	})
 </script>
+		<script>
+			function del()
+			{
+				var checkdel = document.getElementsByName("check");
+				var form = document.createElement("form");
+				form.method = "post";
+				form.action = 'delcollect'
+				document.body.appendChild(form)
+				var j = 0;
+				for(var i=0;i<checkdel.length;i++)
+				{
+					if(checkdel[i].checked == true)
+					{
+						var input = document.createElement("input");
+						input.type = "hidden";
+						input.name = j;
+						input.value = checkdel[i].value;
+						form.appendChild(input);
+						j++;
+					}
+				}
+				form.submit();
+			}
+		</script>
 <script src="{% static 'js/jquery.min.js'%}"></script>
 <script src="{% static 'js/amazeui.min.js'%}"></script>
 	</body>
