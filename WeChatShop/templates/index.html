@@ -17,32 +17,12 @@
 		<script src="{%static 'js/time.js'%}"></script>
 		<script src="{%static 'js/popup.mini.js'%}"></script>
 	</head>
-	<body>
-		<!--<header data-am-widget="header" class="am-header am-header-default sq-head1">-->
-			<!--<div class="am-header-left am-header-nav">-->
-		        <!--<a href="city.html" class="" style="color: #fff;">-->
-			        <!--<img src="{%static 'images/city.png'%}" />-->
-			        <!--<p style="font-size: 12px; margin-top: -35px;">南昌</p>-->
-			    <!--</a>-->
-		   <!--</div>-->
-			<!--<h1 class="am-header-title1">-->
-		        <!--<div class="search-box">-->
-		           <!--<a href="village.html" class="index-search">南昌大学前湖校区∨</a>-->
-		         <!--&lt;!&ndash;  <input type="submit" value="" class="search-icon" /> &ndash;&gt;-->
-		        <!--</div>-->
-		    <!--</h1>-->
-			<!--<div class="am-header-right am-header-nav">-->
-			    <!--<a href="tidings.html" class="">-->
-		         <!--<div class="messgae"><span>10</span></div>-->
-		        <!--</a>-->
-			<!--</div>-->
-        <!--</header>-->
-<!--<div style="height: 49px;"></div>-->
-<!--图片轮换-->
+
+    <body>
 <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
   <ul class="am-slides">
     <li><img src="{%static 'images/banner.png'%}" /></li>
-    <li><img src="{%static 'images/banner.png'%}" /></li>
+    <li><img src="{%static 'images/展示1.jpg'%}" /></li>
   </ul>
 </div>
 <!--导航-->
@@ -71,25 +51,7 @@
             </a>
         </div>
       </li>
-      <li>
-        <div class="am-gallery-item">
-            <a href="" class="">
-              <img src="{%static 'images/icon3.png'%}" />
-              <p>即将上线</p>
-            </a>
-        </div>
-      </li>
-  </ul>
-  <ul class="sq-nav1">
-  	<li>
-        <div class="am-gallery-item">
-            <a href="speed.html" class="">
-              <img src="{%static 'images/icon4.png'%}" />
-              <p>零食飞速</p>
-            </a>
-        </div>
-      </li>
-      <li>
+     <li>
         <div class="am-gallery-item">
             <a href="category.html" class="">
               <img src="{%static 'images/icon5.png'%}" />
@@ -97,30 +59,13 @@
             </a>
         </div>
       </li>
-      
   </ul>
   <div class="h-line"></div>
-  <!--不规则展示-->
-  <div class="index-product">
-  	<div class="index-pro-lf"><a href=""><img src="{%static 'images/s1.png'%}"/></a></div>
-  	<div class="index-pro-lr"><a href=""><img src="{%static 'images/s2.png'%}"/></a></div>
-  </div>
-  <div class="product-bot">
-  	<div class="product-bot-lf"><a href=""><img src="{%static 'images/s3.png'%}"/></a></div>
-  	<div class="product-bot-lr">
-  		<div class="top"><a href=""><img src="{%static 'images/s4.png'%}"/></a></div>
-  		<div class="bot">
-  			<div class="bot-lf"><a href=""><img src="{%static 'images/s5.png'%}"/></a></div>
-  			<div class="bot-lr"><a href=""><img src="{%static 'images/s6.png'%}"/></a></div>
-  		</div>
-  	</div>
-  </div>
-  <!--不规则展示-->
   <div class="h-line"></div>
   <!-- 特色专区-->
   <div class="sq-title">
  	<img src="{%static 'images/ts.png'%}" width="26"/>
- 	特色专区
+ 	所有商品
   </div>
   <ul data-am-widget="gallery" class="am-gallery pro-list am-avg-sm-2 am-avg-md-2 am-avg-lg-4 am-gallery-default"  >
       {% for goods in goods_list%}
@@ -155,12 +100,6 @@
             <a href="/index.html" class="curr">
                 <span class="am-icon-home"></span>
                 <span class="am-navbar-label">首页</span>
-            </a>
-          </li>
-          <li>
-            <a href="/message.html" class="">
-                <span class="am-icon-comments"></span>
-                <span class="am-navbar-label">动态</span>
             </a>
           </li>
           <li>

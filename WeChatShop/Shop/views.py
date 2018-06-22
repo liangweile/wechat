@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from django.shortcuts import render
-from Shop.models import goods, shopcart, consignee, order, comment
+from Shop.models import goods, shopcart, consignee, order, comment, category
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
 from django.http import HttpResponseRedirect, HttpResponse
@@ -158,6 +158,7 @@ def order_views(req):
     return render(req, 'order.html', {'goods_list':goods_list, 'order_consignee':order_consignee, 'order_price':price,'order_id':order_new.order_id})
 
 
+@login_required
 # 结算
 def tureorder(req):
     tureorder_list = []
@@ -237,8 +238,15 @@ def message(req):
 
 
 # 分类
-def category(req):
-    return render(req, 'category.html')
+def category_views(req):
+    if req.POST:
+        category_get = category.objects.get(category_name=req.POST['name'])
+        goods_all = category_get.goods_set.all()
+        return render(req, 'category.html',{'goods_all':goods_all,'category':category_get})
+    category_apple = category.objects.get(category_name='苹果')
+    goods_apple = category_apple.goods_set.all()
+    return render(req, 'category.html', {'goods_all': goods_apple, 'category': category_apple})
+
 
 #评价
 def comment_views(req):
@@ -295,6 +303,9 @@ def contact(req):
 
 # 商品详情
 def detail(req, goods_id):
+    good = 0
+    middle = 0
+    bad = 0
     if req.user.is_authenticated:
         user = User.objects.get(username=req.user.username)
         goods_list = user.goods_set.all()
@@ -304,10 +315,34 @@ def detail(req, goods_id):
         else:
             sign = 0
         comment_list = goods_detail.comment_set.all()
-        return render(req, 'detail.html', {'goods_detail': goods_detail, "collect":sign, "comment_list":comment_list})
+        for com in comment_list:
+            if com.comment_level == 'good':
+                good += 1
+            elif com.comment_level == 'middle':
+                middle += 1
+            else:
+                bad += 1
+        if ((good!=0)|(middle!=0)|(bad!=0)):
+            good_bili = good/(good+middle+bad)*100
+            middle_bili = middle/(good+middle+bad)*100
+            bad_bili = bad/(good+middle+bad)*100
+        else:
+            good_bili = 0
+            middle_bili = 0
+            bad_bili = 0
+        return render(req, 'detail.html', {'goods_detail': goods_detail, "collect":sign, "comment_list":comment_list,
+                                           'good':good,'middle':middle,'bad':bad,
+                                           'good_bili': good_bili,
+                                           'middle_bili': middle_bili,
+                                           'bad_bili': bad_bili
+                                           })
     else:
         goods_detail = goods.objects.get(id=goods_id)
-        return render(req, 'detail.html', {'goods_detail':goods_detail})
+        return render(req, 'detail.html', {'goods_detail':goods_detail,
+                                           'good':good,'middle':middle,'bad':bad,
+                                           'good_bili':good_bili,
+                                           'middle_bili':middle_bili,
+                                           'bad_bili':bad_bili})
 
 
 

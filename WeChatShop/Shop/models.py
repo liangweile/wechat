@@ -51,19 +51,26 @@ class order(models.Model):
 class order_detail(models.Model):
     order = models.ForeignKey(order, on_delete=models.CASCADE)
 
+#商品分类
+class category(models.Model):
+    category_name = models.CharField(max_length=150)
+    def __str__(self):
+        return self.category_name
+
+
 # 商品模型
 class goods(models.Model):
     sale = models.IntegerField(default=0)
     title = models.CharField(max_length=150, default='')
-    desc = models.CharField(max_length=150, default='')
     price = models.IntegerField(default=0)
     pic_url = models.CharField(max_length=150, default='')
-    goods_detail = models.TextField(default='')
+    pic_url_detail = models.CharField(max_length=150, default='')
     goods_shopcart_number = models.IntegerField(default=0)
     goods_order_number = models.IntegerField(default=0)
     goods_to_shopcart = models.ManyToManyField(shopcart, null=True, blank=True)
     goods_to_order = models.ManyToManyField(order, null=True, blank=True)
     goods_to_user = models.ManyToManyField(settings.AUTH_USER_MODEL, null=True, blank=True)#收藏
+    goods_to_category = models.ForeignKey(category, on_delete=models.CASCADE, null=True, blank=True)
 
 
     def __str__(self):
@@ -79,7 +86,4 @@ class comment(models.Model):
 
     def __str__(self):
         return self.comment_name
-# #个人余额
-# class records(models.Model):
-#     cash = models.FloatField()
-#     hongbao = models.FloatField()
+

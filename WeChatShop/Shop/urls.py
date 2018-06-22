@@ -21,7 +21,7 @@ urlpatterns = [
     path('allorder.html', views.allorder),
     path('message.html', views.message),
     path('address.html', views.address),
-    path('category.html', views.category),
+    path('category.html', views.category_views),
     path('collect.html', views.collect),
     path('collect-edit.html', views.collect_edit),
     path('contact.html', views.contact),

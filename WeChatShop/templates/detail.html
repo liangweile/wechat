@@ -14,6 +14,8 @@
     <link href="{% static 'css/amazeui.min.css'%}" rel="stylesheet" type="text/css"/>
     <link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css"/>
     <script src="{% static 'js/jquery-1.10.2.min.js'%}"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script>
         	function changeImage(){
               document.getElementById("imgflag").src="{% static 'images/redherat.png'%}";
@@ -82,31 +84,41 @@
     <div class="am-tabs-bd">
         <div class="am-tab-panel am-fade am-in am-active detail " id="tab1">
             {{goods_detail.goods.detail}}
-            <img src="{% static 'images/test11.png'%}"/>
+            <img src="{{goods_detail.pic_url_detail}}"/>
         </div>
         <div class="am-tab-panel am-fade detail " id="tab2">
             <div class="comment">
                 <span>好评：</span>
-                <div class="com-good"></div>
-                <span>100%</span>
+                <div class="progress-bar progress-bar-success" role="progressbar"
+                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                 style="width: {{good_bili}}%;">
+                <span>{{good_bili}}%</span>
+                </div>
             </div>
             <div class="comment">
                 <span>中评：</span>
-                <div class="com-bad"></div>
-                <span>0%</span>
+                <div class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                 style="width: {{middle_bili}}%;">
+                <span>{{middle_bili}}%</span>
+                </div>
             </div>
             <div class="comment">
                 <span>差评：</span>
-                <div class="com-bad"></div>
-                <span>0%</span>
+                <div class="progress-bar progress-bar-warning" role="progressbar"
+                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                 style="width: {{bad_bili}}%;">
+                <span>{{bad_bili}}%</span>
+                </div>
             </div>
-            {% for comment in comment_list %}
+
             <ul class="comment-list">
                 <li class="current"><a href="">全部</a></li>
-                <li><a id="good" href="">好评（20）</a></li>
-                <li><a id="middle" href="">中评（5）</a></li>
-                <li><a id="bad" href="">差评（0）</a></li>
+                <li><a>好评（{{good}}）</a></li>
+                <li><a>中评（{{middle}}）</a></li>
+                <li><a>差评（{{bad}}）</a></li>
             </ul>
+            {% for comment in comment_list %}
             <ul class="comment-pic">
                 <li>
                     <div class="tit">
@@ -199,10 +211,6 @@
     {
         $.post("/collect.html", {"goods_id":{{goods_detail.id}}}, function(res){})
     });
-    $("#good").click(function(){$.post("/detail.html",{"show":good},function(res){})});
-    $("#all").click(function(){$.post("/detail.html",{"show":all},function(res){})});
-    $("#middle").click(function(){$.post("/detail.html",{"show":middle},function(res){})});
-    $("#bad").click(function(){$.post("/detail.html",{"show":bad},function(res){})});
 </script>
 <script src="{% static 'js/amazeui.min.js'%}"></script>
 </body>
